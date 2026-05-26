@@ -11,118 +11,105 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5; /* Fondo de página neutro */
+            background-color: #262a36; /* Fondo de pantalla unificado */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
-        /* Estilo para los botones de acción */
+        /* Estilo para los botones de acción armonizados */
         .action-button {
             transition: all 0.2s ease-in-out;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            background-color: #ffcc08;
+            color: #262a36;
         }
         .action-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-        }
-        /* Color de acento amarillo solicitado */
-        .bg-custom-yellow {
-            background-color: #ffcc08;
-            color: #1f2937;
-        }
-        .hover\:bg-custom-yellow-dark:hover {
             background-color: #e5b807;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
-        .focus\:ring-custom-yellow-ring:focus {
+        .action-button:focus {
             box-shadow: 0 0 0 4px rgba(255, 204, 8, 0.5);
-        }
-        /* Fondo oscuro personalizado para la tarjeta */
-        .bg-card-dark {
-            background-color: #262a36;
-        }
-        /* Recuadro sutil para logos en fondo oscuro */
-        .bg-logo-dark-box {
-            background-color: #262a36;
         }
     </style>
 </head>
 <body>
 
-    <!-- Contenedor Principal de la Tarjeta con fondo #262a36 -->
-    <div class="w-full max-w-sm mx-4 bg-card-dark rounded-xl shadow-2xl overflow-hidden p-6 md:p-8 border border-slate-700">
+    <!-- Contenedor Principal de la Tarjeta con borde amarillo sutil -->
+    <div class="w-full max-w-sm mx-4 bg-[#262a36] rounded-2xl shadow-2xl overflow-hidden p-6 md:p-8 border border-[#ffcc08]/20">
 
         <!-- Sección Superior: Nombre y Marcas -->
         <header class="text-center mb-6">
             
             <!-- Nombre en blanco para alto contraste -->
             <h1 class="text-2xl font-extrabold text-white leading-tight">Maximiliano Arechiga Morales</h1>
-            <!-- Título en cyan para mantener el acento corporativo -->
-            <p class="text-md font-semibold text-cyan-400 uppercase tracking-wider mt-1 mb-6">Legal</p>
+            <!-- Título en el amarillo de acento corporativo -->
+            <p class="text-md font-semibold text-[#ffcc08] uppercase tracking-wider mt-1.5 mb-6">Legal</p>
 
-            <!-- Marcas de la Empresa con sus respectivos recuadros CUADRADOS (Tres Logos) -->
-            <div class="flex justify-center items-center space-x-3 pt-3 border-t border-slate-700">
+            <!-- Marcas de la Empresa (Dos Logos alineados) -->
+            <div class="flex justify-center items-center space-x-4 pt-4 border-t border-white/10">
                 
-                <!-- Recuadro Blanco para el Logo de COUNSELFID (Cuadrado) -->
-                <div class="bg-white p-2 rounded-lg flex items-center justify-center h-20 w-20 shadow-sm">
-                    <img src="counselfid.png" alt="COUNSELFID LOGO" class="max-h-full max-w-full object-contain" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFFFFF/1E293B?text=CF';" 
-                         title="COUNSELFID Logo"/>
-                </div>
-                
-                <span class="text-slate-600 text-sm font-light">|</span> 
-
-                <!-- Recuadro Oscuro para el Logo de DOXUS (Cuadrado) -->
-                <div class="bg-logo-dark-box p-2 rounded-lg flex items-center justify-center h-20 w-20 border border-slate-600 shadow-sm"> 
+                <!-- Recuadro Oscuro para el Logo de DOXUS -->
+                <div class="bg-[#262a36] p-2 rounded-xl flex items-center justify-center h-20 w-20 border border-white/10 shadow-sm"> 
                     <img src="doxus-logo.png" alt="DOXUS LOGO" class="max-h-full max-w-full object-contain" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/262a36/FFFFFF?text=DX';" 
                          title="DOXUS Logo"/>
                 </div>
 
-                <span class="text-slate-600 text-sm font-light">|</span> 
+                <span class="text-white/20 text-sm font-light">|</span> 
 
-                <!-- Recuadro Oscuro para el Logo de FIDBACK (Cuadrado) -->
-                <div class="bg-logo-dark-box p-2 rounded-lg flex items-center justify-center h-20 w-20 border border-slate-600 shadow-sm">
+                <!-- Recuadro Oscuro para el Logo de FIDBACK -->
+                <div class="bg-[#262a36] p-2 rounded-xl flex items-center justify-center h-20 w-20 border border-white/10 shadow-sm">
                     <img src="fidback.png" alt="FIDBACK LOGO" class="max-h-full max-w-full object-contain" 
                          onerror="this.onerror=null;this.src='https://placehold.co/100x100/262a36/FFFFFF?text=FB';" 
                          title="FIDBACK Logo"/>
                 </div>
             </div>
-             <p class="text-[10px] font-medium text-slate-400 mt-4">Derecho Inmobiliario & Fideicomisos</p>
+             <p class="text-[10px] font-semibold text-white/60 tracking-wider mt-4 uppercase">Derecho Inmobiliario & Fideicomisos</p>
         </header>
 
-        <!-- Sección de Botones de Contacto -->
+        <!-- Sección de Botones de Contacto Armonizados -->
         <main class="space-y-4">
             <!-- Botón de Teléfono -->
-            <a href="tel:+523321329326" class="action-button flex items-center justify-center p-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.717 21 3 14.283 3 6V5z"></path></svg>
+            <a href="tel:+523321329326" class="action-button flex items-center justify-center p-3 rounded-xl focus:outline-none">
+                <svg class="w-5 h-5 mr-3 text-[#262a36]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.717 21 3 14.283 3 6V5z"></path>
+                </svg>
                 <span class="font-bold text-sm">Llamar: +52 3321329326</span>
             </a>
 
             <!-- Botón de Correo Electrónico -->
-            <a href="mailto:m.arechiga@counselfid.mx" class="action-button flex items-center justify-center p-3 bg-slate-800 text-cyan-400 border border-cyan-400 rounded-lg hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-19 4v7a2 2 0 002 2h16a2 2 0 002-2v-7"></path></svg>
-                <span class="font-bold text-sm">Email: m.arechiga@counselfid.mx</span>
+            <a href="mailto:maximiliano@doxus.mx" class="action-button flex items-center justify-center p-3 rounded-xl focus:outline-none">
+                <svg class="w-5 h-5 mr-3 text-[#262a36]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-19 4v7a2 2 0 002 2h16a2 2 0 002-2v-7"></path>
+                </svg>
+                <span class="font-bold text-sm">Email: maximiliano@doxus.mx</span>
             </a>
 
             <!-- Botón de LinkedIn -->
-            <a href="https://www.linkedin.com/in/maximiliano-aréchiga-morales-6b2431241/" target="_blank" class="action-button flex items-center justify-center p-3 bg-slate-700 text-white rounded-lg hover:bg-slate-600 focus:outline-none focus:ring-4 focus:ring-slate-700 focus:ring-opacity-50">
-                <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.528-4 0v5.604h-3v-11h3v1.765c1.395-2.535 7-2.358 7 3.551v5.684z"/></svg>
+            <a href="https://www.linkedin.com/in/maximiliano-ar%C3%A9chiga-morales-6b2431241/" target="_blank" class="action-button flex items-center justify-center p-3 rounded-xl focus:outline-none">
+                <svg class="w-5 h-5 mr-3 text-[#262a36]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.528-4 0v5.604h-3v-11h3v1.765c1.395-2.535 7-2.358 7 3.551v5.684z"/>
+                </svg>
                 <span class="font-bold text-sm">Ver Perfil de LinkedIn</span>
             </a>
             
             <!-- Botón para guardar contacto (vCard) -->
-            <button id="vcard-button" class="action-button w-full flex items-center justify-center p-3 bg-custom-yellow text-slate-800 rounded-lg hover:bg-custom-yellow-dark focus:outline-none focus:ring-4 focus:ring-custom-yellow-ring">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+            <button id="vcard-button" class="action-button w-full flex items-center justify-center p-3 rounded-xl focus:outline-none">
+                <svg class="w-5 h-5 mr-3 text-[#262a36]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                </svg>
                 <span class="font-bold text-sm">Guardar Contacto (vCard)</span>
             </button>
         </main>
         
         <!-- Código QR -->
-        <footer class="mt-8 pt-4 border-t border-slate-700 text-center">
-             <p class="text-sm font-medium text-slate-400 mb-3">Escanea para guardar mi información:</p>
-             <div class="bg-white p-2 inline-block rounded-lg shadow-md">
-                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AMorales%3BMaximiliano%20Arechiga%0AFN%3AMaximiliano%20Arechiga%20Morales%0ATITLE%3ALegal%0AORG%3ACounselFid%20%2F%20DOXUS%20%2F%20FIDBACK%0ATEL%3A%2B523321329326%0AEMAIL%3Am.arechiga%40counselfid.mx%0AURL%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fin%2Fmaximiliano-ar%C3%A9chiga-morales-6b2431241%2F%0AEND%3AVCARD" 
+        <footer class="mt-8 pt-5 border-t border-white/10 text-center">
+             <p class="text-xs font-semibold text-white/70 tracking-wide mb-3 uppercase">Escanea para guardar mi contacto</p>
+             <div class="bg-white p-2.5 inline-block rounded-xl shadow-lg">
+                 <!-- El fondo del QR se mantiene blanco puro por razones de compatibilidad técnica con lectores de cámaras de smartphones -->
+                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AMorales%3BMaximiliano%20Arechiga%0AFN%3AMaximiliano%20Arechiga%20Morales%0ATITLE%3ALegal%0AORG%3ADOXUS%20%2F%20FIDBACK%0ATEL%3A%2B523321329326%0AEMAIL%3Amaximiliano%40doxus.mx%0AURL%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fin%2Fmaximiliano-ar%C3%A9chiga-morales-6b2431241%2F%0AEND%3AVCARD" 
                       alt="Código QR de vCard" 
                       class="w-24 h-24">
              </div>
@@ -138,13 +125,14 @@ VERSION:3.0
 N:Morales;Maximiliano Arechiga
 FN:Maximiliano Arechiga Morales
 TITLE:Legal
-ORG:CounselFid / DOXUS / FIDBACK
+ORG:DOXUS / FIDBACK
 TEL:+523321329326
-EMAIL:m.arechiga@counselfid.mx
+EMAIL:maximiliano@doxus.mx
 URL:https://www.linkedin.com/in/maximiliano-aréchiga-morales-6b2431241/
 END:VCARD`;
 
-            const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
+            // Forzar codificación UTF-8 para garantizar acentos correctos en Android e iOS
+            const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), vCardContent], { type: 'text/vcard;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
             link.download = 'Maximiliano_Arechiga.vcf';
