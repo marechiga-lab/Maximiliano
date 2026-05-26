@@ -108,7 +108,7 @@
         <footer class="mt-8 pt-5 border-t border-white/10 text-center">
              <p class="text-xs font-semibold text-white/70 tracking-wide mb-3 uppercase">Escanea para guardar mi contacto</p>
              <div class="bg-white p-2.5 inline-block rounded-xl shadow-lg">
-                 <!-- El fondo del QR se mantiene blanco puro por razones de compatibilidad técnica con lectores de cámaras de smartphones -->
+                 <!-- Código QR optimizado con codificación nativa para lectura inmediata -->
                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AMorales%3BMaximiliano%20Arechiga%0AFN%3AMaximiliano%20Arechiga%20Morales%0ATITLE%3ALegal%0AORG%3ADOXUS%20%2F%20FIDBACK%0ATEL%3A%2B523321329326%0AEMAIL%3Amaximiliano%40doxus.mx%0AURL%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fin%2Fmaximiliano-ar%C3%A9chiga-morales-6b2431241%2F%0AEND%3AVCARD" 
                       alt="Código QR de vCard" 
                       class="w-24 h-24">
@@ -117,7 +117,7 @@
 
     </div>
 
-    <!-- Script para generar el archivo vCard (VCF) -->
+    <!-- Script optimizado para máxima compatibilidad con Android e iOS -->
     <script>
         document.getElementById('vcard-button').addEventListener('click', function() {
             const vCardContent = `BEGIN:VCARD
@@ -131,12 +131,21 @@ EMAIL:maximiliano@doxus.mx
 URL:https://www.linkedin.com/in/maximiliano-aréchiga-morales-6b2431241/
 END:VCARD`;
 
-            // Forzar codificación UTF-8 para garantizar acentos correctos en Android e iOS
-            const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), vCardContent], { type: 'text/vcard;charset=utf-8' });
+            // Función segura para convertir texto UTF-8 a Base64 sin romper caracteres con acentos
+            function utoa(str) {
+                return window.btoa(unescape(encodeURIComponent(str)));
+            }
+
+            // Agregamos el byte de orden de bytes (BOM) UTF-8 al inicio para que Android/iOS lean bien las tildes
+            const bom = "\uFEFF";
+            const base64Content = utoa(bom + vCardContent);
+            
+            // Creación del enlace dinámico forzando vcard a nivel binario mediante Base64
             const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
+            link.href = 'data:text/vcard;charset=utf-8;base64,' + base64Content;
             link.download = 'Maximiliano_Arechiga.vcf';
 
+            // Ejecutar clic nativo
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
